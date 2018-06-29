@@ -1590,6 +1590,8 @@ case "$target" in
 
                 #init task load, restrict wakeups to preferred cluster
                 echo 15 > /proc/sys/kernel/sched_init_task_load
+                # spill load is set to 100% by default in the kernel
+                echo 10 > /proc/sys/kernel/sched_spill_nr_run
 
                 for devfreq_gov in /sys/class/devfreq/qcom,mincpubw*/governor
                 do
@@ -1737,8 +1739,8 @@ case "$target" in
                 echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
 
                 # SMP scheduler
-                echo 85 > /proc/sys/kernel/sched_upmigrate
-                echo 85 > /proc/sys/kernel/sched_downmigrate
+                echo 75 > /proc/sys/kernel/sched_upmigrate
+                echo 60 > /proc/sys/kernel/sched_downmigrate
 
                 # Set Memory parameters
                 configure_memory_parameters
