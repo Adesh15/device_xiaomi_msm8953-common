@@ -399,3 +399,9 @@ PRODUCT_COPY_FILES += \
 # Extras
 PRODUCT_PACKAGES += \
     XiaomiParts
+
+#Prebuilt Apps
+PRODUCT_PACKAGES += \
+    RetroMusicPlayer \
+    MiXplorer \
+    Via
