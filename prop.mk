@@ -185,3 +185,6 @@ persist.sys.usb.config.extra=none
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
 wifi.interface=wlan0
+
+# Fix Cast/Miracast
+persist.sys.wfd.virtual=0
